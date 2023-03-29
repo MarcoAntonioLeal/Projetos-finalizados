@@ -60,8 +60,11 @@ p {
 }
 
 #imagem001 {
-    background: url(arquivos/background001.jpg) right center/cover fixed;
+    background-image: url(arquivos/background001.jpg);
     padding-left: 25px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     
 }
 
