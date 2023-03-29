@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root {
+    --font1: Passion One, cursive;
+    --font2: Sriracha, cursive;
+    --font3: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    font-family: var(--font1);
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 8vw;
+    font-variant: small-caps;
+}
+
+#autor {
+    margin-top: -5%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--font3);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#autor::before {
+    content: "Por ";
+    font-family: var(--font3);
+}
+
+section {
+    font-family: var(--font2);
+    font-size: 3.5vw;
+    padding: 5px;
+    line-height: 200%;
+}
+
+p {
+    padding-left: 25px;
+}
+
+#imagem001 {
+    background: url(arquivos/background001.jpg) right center/cover fixed;
+    padding-left: 25px;
+    
+}
+
+#imagem002 {
+    background: url(arquivos/background002.jpg) right center/cover fixed;
+    padding-left: 25px;
+}
+
+.paragImg{
+    background-color: #0a0a0a81;
+    display: inline-block;
+    padding-left: 5px;
+    color: white;
+    text-shadow: 1px 1px 0px black;
+}
+
+footer {
+    background-color: black;
+    font-family: var(--font3);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
