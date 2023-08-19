@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+div {display: block;}
+menu {display: none;}
+main {margin-top: 10px;}
+
+header, menu {
+    width: 50vw;
+}
