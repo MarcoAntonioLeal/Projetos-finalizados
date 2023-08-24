@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="smallScreenStyle.css" media="screen and (max-width: 770px)">
+    <script src="script.js" defer></script>
+</head>
+<header>
+    <h1>Jogo da velha</h1>
+    <div id="rules">
+        <h2>Regras</h2>
+        <ul>
+            <li>Bem vindo ao nosso jogo da velha</li>
+            <li>Primeiramente preencha o nome dos dois jogadores</li>
+            <li>Dois jogadores escolhem uma marcação cada um, geralmente um círculo (O) e um xis (X).</li>
+            <li>Os jogadores jogam alternadamente, uma marcação por vez, numa lacuna que esteja vazia.</li>
+            <li>Os jogadores jogam alternadamente, uma marcação por vez, numa lacuna que esteja vazia.</li>
+            <li>O objectivo é conseguir três círculos ou três xis em linha, quer horizontal, vertical ou diagonal, e ao mesmo tempo quando possível, impedir o adversário de ganhar na próxima jogada.</li>
+            <li>Para recomeçar o jogo ou apagar os campos  com os nomes dos jogadores, clique no botão recomeçar</li>
+        </ul>
+    </div>
+    <section id="sectionPlayer">
+        <p>
+            Nome dos jogadores:
+            <br>
+            <input type="text" name="name" id="name" autocomplete="off" placeholder="jogador 1">
+            <input type="button" value="CONFIRMAR" id="confirm">
+            <input type="button" value="RECOMEÇAR" id="restart">
+        </p>
+        <ul>
+            <li id="namePlayerOne"></li>
+            <li id="namePlayerTwo"></li>
+        </ul>
+    </section>
+</header>
+
+<main id="outJogoVelha">
+    <div id="inJogoVelha">
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+        <select name="" id="">
+            <option value="" selected disabled></option>
+            <option value="">X</option>
+            <option value="">O</option>
+        </select>
+    </div>
+</main>
+
+<!--## Tic-Tac-Toe / Jogo da Velha
+
+Construa um jogo tic-tac-toe, conhecido em português como jogo da velha, utilizando HTML, CSS e Javascript. Você pode desenvolver com liberdade, da forma que preferir, mas o jogo precisa atender aos seguintes requisitos:
+
+- Deve ser possível incluir os nomes dos dois jogadores;
+- O nome do jogador da vez deve ser mostrado na tela e alterado a medida que os turnos vão se alternando;
+- Um tabuleiro deve ser mostrado na tela e ser atualizado quando o jogador clicar na região que ele quer marcar;
+- Quando um jogador clicar no tabuleiro deve ser marcado um “X” ou “O” de acordo com o jogador da vez e não deve ser possível clicar naquela região novamente;
+- Quando um jogador ganhar seu nome deve ser mostrado na tela e as regiões da vitória devem ser destacadas de alguma forma;
+- Em caso de empate, uma mensagem de empate deve ser mostrada na tela;
+- Deve ser possível reiniciar o jogo para jogar novamente.-->
+</body>
+
+</html>

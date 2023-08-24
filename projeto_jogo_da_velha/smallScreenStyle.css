@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#rules { margin: auto;}
+
+#sectionPlayer{
+    margin: auto;
+    margin-top: 10px;
+}
+
+h1, h2 {text-align: center;}
