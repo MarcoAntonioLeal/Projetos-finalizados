@@ -88,4 +88,4 @@ select:hover {
     transition: .3s;
 }
 
-.disabled {background-color: rgba(3, 3, 3, 0.669);}
+.none {display: none;}
