@@ -13,7 +13,6 @@
 <body>
     <section>
         <h1>Marco Antonio Stanziola Leal Filho</h1>
-        <h2>Sobre mim</h2>
         <img src="./img/img_perfil.jpeg" alt="foto perfil" width="200px">
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illum laboriosam corporis odit reprehenderit quae! Libero voluptate iste sed odit possimus vel ullam repellendus nemo reiciendis consequuntur, quam molestias voluptatem.
@@ -31,13 +30,13 @@
         <form action="#">
             <p>
                 <label for="name">Nome:</label>
-                <input type="text" name="name" id="name" placeholder="Nome completo:" required>
+                <input type="text" name="name" id="name" placeholder="Nome completo:" required autocomplete="off">
                 
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" required autocomplete="off">
                 
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" required placeholder="(0xx) xxxxx-xxxx">
+                <input type="text" name="telefone" id="telefone" required placeholder="(0xx) xxxxx-xxxx" autocomplete="off">
             </p>
             <hr>
             <p>
@@ -45,7 +44,8 @@
                 <textarea name="infoAdicionais" id="infoAdicionais" cols="30" rows="5"></textarea>
                 
                 <label for="" id="areaDeAtuacao">Área de atuação</label>
-                <select name="" id="">
+                <select name="" id="area">
+                    <option value="" selected disabled></option>
                     <option value="Front-end">Front-end</option>
                     <option value="Back-end">Back-end</option>
                     <option value="Full Stack">Full Stack</option>
@@ -97,9 +97,12 @@
                 <input type="file" name="curriculo" id="curriculo">
             </p>
             <p>
-                <button type="button" class="btn btn-success">Confirmar Informações</button>
+                <button type="button" class="btn btn-success" id="btn">Confirmar Informações</button>
             </p>
         </form>
+        <section>
+            <ul id="resultadoForm"></ul>
+        </section>
     </section>
     <hr>
     <h3 id="h3SectionCursos">Cursos para iniciar na programação</h3>
