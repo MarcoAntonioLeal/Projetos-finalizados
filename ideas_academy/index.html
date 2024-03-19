@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <title>Meu site</title>
+</head>
+<body>
+    <section>
+        <h1>Marco Antonio Stanziola Leal Filho</h1>
+        <h2>Sobre mim</h2>
+        <img src="./img/img_perfil.jpeg" alt="foto perfil" width="200px">
+        <p>
+            Me chamo Marco Antonio, tenho 34 anos (Não gosto de falar muito sobre mim) ..... estou cursando administração na Rural pelo CEDERJ, já trabalhei em várias áreas mas me encontrei na programação. Não sou iniciante mas sei programar códigos simples.
+        </p>
+        <p>
+            <h3>Redes Sociais</h3>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/marco-antonio-stanziola-leal-filho-515594100?trk=org-employees_profile-result-card_result-card_full-click" target="_blank" rel="external">Linkedin</a></li>
+                <li><a href="https://github.com/MarcoAntonioLeal" target="_blank" rel="external">GitHub</a></li>
+            </ul>
+        </p>
+        <hr>
+    <section>
+        <h2>Meu formulário</h2>
+        <form action="#">
+            <p>
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name" placeholder="Nome completo:" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required>
+                
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" required placeholder="(0xx) xxxxx-xxxx">
+            </p>
+            <hr>
+            <p>
+                <label for="infoAdicionais">Experiência Profissional:</label>
+                <textarea name="infoAdicionais" id="infoAdicionais" cols="30" rows="5"></textarea>
+                
+                <label for="" id="areaDeAtuacao">Área de atuação</label>
+                <select name="" id="">
+                    <option value="Front-end">Front-end</option>
+                    <option value="Back-end">Back-end</option>
+                    <option value="Full Stack">Full Stack</option>
+                    <option value="UI design">UI design</option>
+                    <option value="UX design">UX design</option>
+                </select>
+            </p>
+           <hr>
+            <table>
+                Proficiência em Línguas:
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Básico</th>
+                        <th>Intermediário</th>
+                        <th>Avançado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inglês</td>
+                        <td><input type="radio" name="ingles" id="basico"></td>
+                        <td><input type="radio" name="ingles" id="intermediario"></td>
+                        <td><input type="radio" name="ingles" id="avancado"></td>
+                    </tr>
+                    <tr>
+                        <td>Espanhol</td>
+                        <td><input type="radio" name="espanhol" id="basico"></td>
+                        <td><input type="radio" name="espanhol" id="intermediario"></td>
+                        <td><input type="radio" name="espanhol" id="avancado"></td>
+                    </tr>
+                    <tr>
+                        <td>Francês</td>
+                        <td><input type="radio" name="frances" id="basico"></td>
+                        <td><input type="radio" name="frances" id="intermediario"></td>
+                        <td><input type="radio" name="frances" id="avancado"></td>
+                    </tr>
+                    <tr>
+                        <td>Alemão</td>
+                        <td><input type="radio" name="alemao" id="basico"></td>
+                        <td><input type="radio" name="alemao" id="intermediario"></td>
+                        <td><input type="radio" name="alemao" id="avancado"></td>
+                    </tr>
+                </tbody>
+            </table>
+           <hr>
+            <p>
+                <label for="">Anexe seu currículo</label>
+                <input type="file" name="curriculo" id="curriculo">
+            </p>
+            <p>
+                <button type="button" class="btn btn-success">Confirmar Informações</button>
+            </p>
+        </form>
+    </section>
+    <hr>
+    <h3 id="h3SectionCursos">Cursos para iniciar na programação</h3>
+    <br>
+        <div class="row">
+            <div class="col coll"> <!--Curso de HTML/CSS-->
+                <a href="https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank" rel="external" title="Link para o curso de HTML e CSS">
+                    <input type="button" value="" class="logoCurso" id="imgHtml" >
+                    <input type="button" value="" class="logoCurso" id="imgCss" >
+                </a>
+                <iframe src="https://www.youtube.com/embed/Ejkb_YpuHWs?si=PJgyDk5tKmJ9eM9_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/vPNIAJ9B4hg?si=klYkO3vji2xHjGrr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/ofFgnDtn_1c?si=n9u03arTPnedPy3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/zHKHMmEG9vE?si=s1F4shW3ToXVg4Ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col coll"> <!--Curso de JS-->
+                <a href="https://www.youtube.com/watch?v=BXqUH86F-kA&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1&index=2" target="_blank" rel="external" title="Link para o curso de JavaScript">
+                    <input type="button" value="" class="logoCurso" id="imgJs">
+                </a>
+                <iframe src="https://www.youtube.com/embed/BXqUH86F-kA?si=YiYmJJYcyZXF0FnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col coll"> <!--Curso de Git/GitHub-->
+                <a href="https://www.youtube.com/watch?v=xEKo29OWILE&list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA" target="_blank" rel="external" title="Link para o curso de Git/GitHub">
+                    <input type="button" value="" class="logoCurso" id="imgGit" ></a>
+                <iframe src="https://www.youtube.com/embed/xEKo29OWILE?si=c1ZasPKv4GqfFWa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col coll"> <!--Curso de Python-->
+                <a href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6" target="_blank" rel="external" title="Link para o curso de Python">
+                    <input type="button" value="" class="logoCurso" id="imgPy" >
+                </a>
+                <iframe src="https://www.youtube.com/embed/S9uPNppGsGo?si=Uj-iYcPHLajL9dcn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nJkVHusJp6E?si=M7Jd-SRJ8r5jHVjl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/0LB3FSfjvao?si=J7jAQsLZNs7PEsgT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+</body>
+</html>
