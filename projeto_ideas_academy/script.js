@@ -5,14 +5,31 @@ const telefone = document.querySelector('#telefone')
 const xpAdc = document.querySelector('#infoAdicionais')
 
 let areaAtuacao = ''
-document.querySelectorAll('#area').forEach((element) => {
+document.querySelectorAll('#area').forEach(element => {
     element.addEventListener('click', (evento) => {
-        areaAtuacao += evento.currentTarget.value
+        areaAtuacao = evento.currentTarget.value
     })
 })
 
-let idiomas = ''
-//document.querySelectorAll('#')
+let idiomaIngles = ''
+document.querySelectorAll('input[name="ingles"]:checked').forEach(element => {
+    idiomaIngles = element.currentTarget
+})
+
+let idiomaEspanhol = ''
+document.querySelectorAll('input[name="espanhol"]:checked').forEach(element => {
+    idiomaEspanhol = element.value
+})
+
+let idiomaFrances = ''
+document.querySelectorAll('input[name="frances"]:checked').forEach(element => {
+    idiomaFrances = element.value
+})
+
+let idiomaAlemao = ''
+document.querySelectorAll('input[name="alemao"]:checked').forEach(element => {
+    idiomaAlemao = element.value
+})
 
 
 //botão
@@ -59,10 +76,13 @@ botao.addEventListener('click', () => {
     ulPrincipal.appendChild(listaAtuacao)
     listaAtuacao.innerText = 'Área de atuação: ' + areaAtuacao
 
-
     ulPrincipal.appendChild(listaLinguas)
+   /* listaLinguas.innerText = `Inglês ${idiomaIngles} /br Espanhol ${idiomaEspanhol} \br Francês ${idiomaFrances} \br Alemão ${idiomaAlemao}`*/
+
+    
 
     nome.value = ''
     email.value = ''
     telefone.value = ''
+    
 })
