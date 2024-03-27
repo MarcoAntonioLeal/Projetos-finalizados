@@ -6,15 +6,17 @@ const xpAdc = document.querySelector('#infoAdicionais')
 
 let areaAtuacao = ''
 document.querySelectorAll('#area').forEach(element => {
-    element.addEventListener('click', (evento) => {
+    element.addEventListener('click', evento => {
         areaAtuacao = evento.currentTarget.value
     })
 })
 
-let idiomaIngles = ''
-document.querySelectorAll('input[name="ingles"]:checked').forEach(element => {
-    idiomaIngles = element.currentTarget
+let idiomaIngles = document.querySelectorAll('input[name="ingles"]:checked').forEach(a => {
+    a.addEventListener('click', function(b) {
+        idiomaIngles = b.currentTarget
+    })
 })
+
 
 let idiomaEspanhol = ''
 document.querySelectorAll('input[name="espanhol"]:checked').forEach(element => {
@@ -54,7 +56,7 @@ listaExperiencia.setAttribute('id', 'lixpAdc')
 const listaAtuacao = document.createElement('li')
 listaAtuacao.setAttribute('id', 'liAtuacao')
 
-const listaLinguas = document.createElement('li')
+let listaLinguas = document.createElement('li')
 listaLinguas.setAttribute('id', 'liLinguas')
 
 
@@ -77,7 +79,11 @@ botao.addEventListener('click', () => {
     listaAtuacao.innerText = 'Área de atuação: ' + areaAtuacao
 
     ulPrincipal.appendChild(listaLinguas)
-   /* listaLinguas.innerText = `Inglês ${idiomaIngles} /br Espanhol ${idiomaEspanhol} \br Francês ${idiomaFrances} \br Alemão ${idiomaAlemao}`*/
+    listaLinguas .innerText = idiomaIngles
+   
+   
+   
+    /* listaLinguas.innerText = `Inglês ${idiomaIngles} /br Espanhol ${idiomaEspanhol} \br Francês ${idiomaFrances} \br Alemão ${idiomaAlemao}`*/
 
     
 

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+--color1: rgb(255, 179, 102, 0.500);
+--color2: rgb(255, 210, 166, 0.500);
+--color3: rgb(128, 105, 83, 0.500);
+--color4: rgba(191, 182, 172, 0.500);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: url(img/imgLogin.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    height: 500px;
+    width: 250px;
+    background-color: var(--color2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+div#imgLogin {
+    background: url(./img/Leopold-Mozart.jpg) no-repeat center/cover;
+    filter: opacity(60%);
+    height: 260px; 
+}
+
+div#login {
+    display: block;
+    font-family: "Lumanosimo", cursive;
+    font-size: 20px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.500);
+}
+
+.firstInput {width: 220px;}
+
+.secondInput {
+    margin-top: 10px;
+    padding: 10px;
+    width: 150px;
+    margin-left: 36px;
+}
+
+.secondInput:hover {
+    background-color: var(--color4);
+    transition-duration: .3s;
+}
+
+
+/*#FFB366
+#FFD2A6
+#806953
+#BFB6AC*/
