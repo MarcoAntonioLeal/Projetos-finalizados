@@ -16,7 +16,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background: url(img/imgLogin.jpg) no-repeat;
+    background: url(img/imgLoginSmall.jpg) no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -24,17 +24,11 @@ body {
 }
 
 main {
-    height: 500px;
-    width: 250px;
+    height: 320px;
+    width: 260px;
     background-color: var(--color2);
     border-radius: 20px;
     overflow: hidden;
-}
-
-div#imgLogin {
-    background: url(./img/Leopold-Mozart.jpg) no-repeat center/cover;
-    filter: opacity(60%);
-    height: 260px; 
 }
 
 div#login {
@@ -66,6 +60,25 @@ input {
     transition-duration: .3s;
 }
 
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    body {
+        background-image: url(img/imgLoginMediun.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    div#imgLogin {
+        display: none;
+    }
+}
+
+/*@media screen and (min-width: 768px) {
+    body {
+        background-image: none;
+    }
+}*/
+
+/*transition timing function e float*/
 
 /*#FFB366
 #FFD2A6
