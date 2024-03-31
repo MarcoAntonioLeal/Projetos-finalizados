@@ -67,7 +67,6 @@ input {
 @media screen and (min-width: 501px) {
     main {
         background-color: var(--color4);
-        height: 50vh;
         width: 50vw;
     }
 
@@ -82,12 +81,14 @@ input {
         filter: opacity(50%);
     }
 
-    div#login {
+    div#login  {
         display: flex;
         width: 70%;
     }
 
-    .firstInput {width: 30vw;}
+    .firstInput {
+        width: 30vw;
+    }
 
     .secondInput {
         display: flex;
@@ -98,4 +99,5 @@ input {
     }
 
     .secondInput:hover {background-color: var(--color2);}
+
 }
