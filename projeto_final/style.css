@@ -36,7 +36,7 @@ main {
 
 div#login {
     display: flex;
-    row-gap: 6px;
+    row-gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ input {
 .firstInput {width: 225px;}
 
 .secondInput {
-    margin-top: 5px;
+    margin-top: 8px;
     width: 160px;
 }
 
