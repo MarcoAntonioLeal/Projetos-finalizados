@@ -97,7 +97,6 @@ input {
         width: 20vw;
         margin-top: 10px;
     }
-
+    
     .secondInput:hover {background-color: var(--color2);}
-
 }
