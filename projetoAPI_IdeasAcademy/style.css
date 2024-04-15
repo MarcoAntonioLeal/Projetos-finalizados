@@ -61,23 +61,55 @@ header > div > input:hover {
 /*Main------------------------------------------*/
 main {
     display: flex;
-    flex: 1 0 300px;
+    flex: 1 0 470px;
 }
 
 div.map {
     background: transparent url(img/mapa-do-brasil-legendado-pintado-regioes.jpg) no-repeat center/contain;
-    width: 50%;
+    min-width: 65%;
 }
 
-div.infoWeather {
-    width: 50%;
+div.states {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    width: 35%;
+    border: 1px solid black;
 }
 
+optgroup[label="Norte"] {background-color: #408F70;}
+optgroup[label="Centro Oeste"] {background-color: #FF8C4D;}
+optgroup[label="Nordeste"] {background-color: #fe00009e;}
+optgroup[label="Sudeste"] {background-color: #E6EC16;}
+optgroup[label="Sul"] {background-color: #9091C9;}
 
+.boxSelect {padding: 20px;}
+
+select {
+    padding: 7px; 
+    box-shadow: 1px 1px 1px #00000080;
+    outline: none;
+}
+
+div.infoWeatherForecast {margin-top: 25%;}
+
+h3 {padding: 10px 20px;}
+
+table  {
+    width: 300px;
+    height: 150px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+table > tr {
+    border: 1px solid black;
+}
 
 
 /*Footer--------------------------------------------*/
 footer {
     background-image: linear-gradient(to right,#ffffff91,#1C274C );
-    height: 80px;
+    height: 60px;
 }
