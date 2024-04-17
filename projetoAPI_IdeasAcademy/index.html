@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,76 +16,66 @@
             <img src="img/logo.svg" alt="logo">
             <h2>IDEAS WEATHER</h2>
         </div>
-       <div class="menu">
+        <div class="menu">
             <input type="button" value="Desenvolvedores">
             <input type="button" value="Mapa do Clima">
             <input type="button" value="Clima por Estado">
-       </div>
+        </div>
     </header>
 
     <main>
-        <div class="map"></div>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31798878.161044173!2d-73.17470416008594!3d-13.36898336534876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1713234780424!5m2!1spt-BR!2sbr"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
         <div class="states">
-            <div class="boxSelect">
-                <label for="">Estados:</label>
-                <select name="states" id="states">
-                    <optgroup label="Norte">
-                        <option value="" selected disabled></option>
-                        <option value="Acre">Acre</option>
-                        <option value="Amapá">Amapá</option>
-                        <option value="Amazonas">Amazonas</option>
-                        <option value="Pará">Pará</option>
-                        <option value="Rondônia">Rondônia</option>
-                        <option value="Roraima">Roraima</option>
-                        <option value="Tocantins">Tocantins</option>
-                    </optgroup>
-                    <optgroup label="Centro Oeste">
-                        <option value="Goiás">Goiás</option>
-                        <option value="Mato Grosso">Mato Grosso</option>
-                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                    </optgroup>
-                    <optgroup label="Nordeste">
-                        <option value="Alagoas">Alagoas</option>
-                        <option value="Bahia">Bahia</option>
-                        <option value="Ceará">Ceará</option>
-                        <option value="Maranhão">Maranhão</option>
-                        <option value="Paraíba">Paraíba</option>
-                        <option value="Pernambuco">Pernambuco</option>
-                        <option value="Piauí">Piauí</option>
-                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                        <option value="Sergipe">Sergipe</option>
-                    </optgroup>
-                    <optgroup label="Sudeste">
-                        <option value="Espírito Santo">Espírito Santo</option>
-                        <option value="Minas Gerais">Minas Gerais</option>
-                        <option value="Rio de Janeiro">Rio de Janeiro</option>
-                        <option value="São Paulo">São Paulo</option>
-                    </optgroup>
-                    <optgroup label="Sul">
-                        <option value="Paraná">Paraná</option>
-                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                        <option value="Santa Catarina">Santa Catarina</option>
-                    </optgroup>
-                </select>
+            <div class="inputSearch">
+                <input type="search" name="search" id="search" autofocus autocomplete="off" placeholder="Cidades do Brasil...">
+                
+                <input type="button" value="Pesquisar" id="btnSearch">
             </div>
 
-            <div class="infoWeatherForecast">
-                <h3>CIDADE | Data</h3>
-                <p>Dia semana</p>
-                <p>Máxima:</p>
-                <p>Mínima:</p>
-                <p>previsão</p>
-                <p>precipitação</p>
-                <p>Umidade</p>
-                <p>icon</p>
-            </div>
+            <table>
+                <caption>
+                    <h3 id="city">CIDADE</h3>
+                </caption>
+                <tr>
+                    <td>Temp. máxima:</td>
+                    <td id="tempMax">valor</td>
+                    <td>icon</td>
+                </tr>
+                <tr>
+                    <td>Temp. <br> mínima:</td>
+                    <td id="tempMin">valor</td>
+                    <td>icon</td>
+                </tr>
+                <tr>
+                    <td>Previsão:</td>
+                    <td id="forecast">valor</td>
+                    <td>icon</td>
+                </tr>
+                <tr>
+                    <td>Precipitação de chuva:</td>
+                    <td id="rain">valor</td>
+                    <td>icon</td>
+                </tr>
+                <tr>
+                    <td>Umidade:</td>
+                    <td id="humidity">valor</td>
+                    <td>icon</td>
+                </tr>
+            </table>
         </div>
     </main>
 
     <footer>
-        https://www.svgrepo.com/ <br>
-        https://www.infoescola.com/geografia/mapa-do-brasil/
+        <div>
+            <p class="time">hora</p>
+            <p class="date">data</p>
+        </div>
     </footer>
 </body>
 
