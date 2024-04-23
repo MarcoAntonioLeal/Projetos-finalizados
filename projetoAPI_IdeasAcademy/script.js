@@ -9,6 +9,7 @@ const tempMin = document.querySelector('#tempMin')
 const forecast = document.querySelector('#forecast')
 const rain = document.querySelector('#rain')
 const humidity = document.querySelector('#humidity')
+const wind = document.querySelector('#wind')
 
 //resultado da previsão
 function resultForecast(dados) {
@@ -22,6 +23,7 @@ function resultForecast(dados) {
     forecast.innerText = dados.weather[0].description
     rain.innerText = dados.clouds.all + '%'
     humidity.innerText = dados.main.humidity + '%'
+    wind.innerText = dados.wind.speed + 'm/s'
 }
 
 //evento e API

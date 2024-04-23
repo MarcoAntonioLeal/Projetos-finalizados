@@ -126,19 +126,20 @@ input#btnSearch {
 }
 
 /*Main table--------------------------------*/
-table {
-    color: var(--cor-azulPrimaria);
+table.forecast {
     width: 250px;
     text-align: center;
+    border-collapse: collapse; 
 }
 
-td {
-    border: 1px  solid var(--cor-azulPrimaria);
+table.forecast td {
+    border: 1px solid var(--cor-azulPrimaria);
     width: 150px;
     height: 50px;
-    border-radius: 5px;
 }
 
+table.forecast td.width {width: 200px;}
+table.forecast td img {width: 40px;}
 #forecast {text-transform: capitalize;}
 
 /*Footer--------------------------------------------*/
@@ -166,3 +167,62 @@ footer > div {
 footer > div p {
     padding: 3px;
 }
+
+/*Mapa*/
+.mapa-texto-interno {
+    font-size: 48px;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+    fill: #FFF;
+  }
+  .norte, .nordeste, .centro-oeste, .sul, .sudeste {
+    fill-rule: evenodd;
+  }
+  .sul, .bolinha-sul {
+    fill: #75d7db;
+  }
+  .sul-bg-white {
+    fill: #75d7db!important;
+  }
+  .sudeste, .bolinha-sudeste {
+    fill: #db7575;
+  }
+
+  .ideasSudeste {
+      background-color: black;
+  }
+
+  .sudeste-bg-white {
+    fill: #db7575!important;
+  }
+  .nordeste, .bolinha-nordeste {
+    fill: #b875db;
+  }
+  .nordeste-bg-white {
+    fill: #b875db!important;
+  }
+  .centro-oeste, .bolinha-centro-oeste {
+    fill: #dba075;
+  }
+  .centro-oeste-bg-white {
+    fill: #dba075!important;
+  }
+  .norte {
+    fill: #75db7e;
+  }
+  .tracado-nordeste, .tracado-centro-oeste, .tracado-sul, .tracado-sudeste {
+    stroke-linecap: round;
+    stroke-width: 3.6px;
+    stroke-dasharray: 7.2 7.2;
+  }
+  .tracado-nordeste {
+    stroke: #b875db;
+  }
+  .tracado-centro-oeste {
+    stroke: #dba075;
+  }
+  .tracado-sudeste {
+    stroke: #db7575;
+  }
+  .tracado-sul {
+    stroke: #75d7db;
+  }
