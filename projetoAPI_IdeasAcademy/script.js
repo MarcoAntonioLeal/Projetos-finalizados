@@ -38,14 +38,6 @@ async function weatherForecast(city) {
     resultForecast(dados)
 }
 
-
-
-
-
-
-
-//tratar as horas e a data
-
 const timeApplication = document.querySelector('.time')
 const dateApplication = document.querySelector('.date')
 
