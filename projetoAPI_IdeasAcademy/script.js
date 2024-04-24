@@ -7,6 +7,7 @@ const city = document.querySelector('#city')
 const tempMax = document.querySelector('#tempMax')
 const tempMin = document.querySelector('#tempMin')
 const forecast = document.querySelector('#forecast')
+const forecastImg = document.querySelector('#imgForecast')
 const rain = document.querySelector('#rain')
 const humidity = document.querySelector('#humidity')
 const wind = document.querySelector('#wind')
@@ -17,13 +18,18 @@ function resultForecast(dados) {
         alert('Essa cidade não existe')
         location.reload()
     }
-    city.innerText = dados.name 
+    city.innerText = dados.name
+    forecastImg.src = imageForecast(dados.weather[0].icon) 
     tempMax.innerText = Number(dados.main.temp_max).toFixed(0) + '°C'
     tempMin.innerText = Number(dados.main.temp_min).toFixed(0) + '°C'
     forecast.innerText = dados.weather[0].description
     rain.innerText = dados.clouds.all + '%'
     humidity.innerText = dados.main.humidity + '%'
     wind.innerText = dados.wind.speed + 'm/s'
+}
+
+function imageForecast(icon) {
+    return `img/iconPrevisaoTempo/campoPrevisao/${icon}.png`
 }
 
 //evento e API
@@ -61,3 +67,5 @@ function date() {
 
 timeApplication.innerText = time()
 dateApplication.innerText = date()
+
+
