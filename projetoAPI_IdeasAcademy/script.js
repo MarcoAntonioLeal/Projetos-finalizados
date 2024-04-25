@@ -1,4 +1,4 @@
- const forecastImg = document.querySelector('#imgForecast') 
+const forecastImg = document.querySelector('#imgForecast') 
 
 const search = document.querySelector('#search')
 const btnSearch = document.querySelector('#btnSearch')
@@ -53,7 +53,6 @@ function resultForecast(dados) {
 
 btnSearch.addEventListener('click', () => {
     weatherForecast(search.value)
-    iframeMaps.src = locationCity(search.value)
     search.value = ''
     search.focus()
 })
@@ -78,3 +77,10 @@ function date() {
 
 timeApplication.innerText = time()
 dateApplication.innerText = date()
+
+/*----------------------------------------------------------*/
+const rioDeJaneiro = document.querySelector('.rioDeJaneiro')
+
+rioDeJaneiro.addEventListener('click', () => {
+    console.log('Olá, mundo!')
+})
