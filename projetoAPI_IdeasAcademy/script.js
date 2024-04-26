@@ -32,7 +32,6 @@ function resultForecast(dados) {
         alert('Essa cidade não existe')
         location.reload()
     }
-    console.log(dados)
     city.innerText = dados.name
     forecastImg.src = imageForecast(dados.weather[0].icon) 
     tempMax.innerText = Number(dados.main.temp_max).toFixed(0) + '°C'
