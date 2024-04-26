@@ -4,7 +4,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
   border-color: var(--cor-azulPrimaria);
 }
 
@@ -181,7 +181,6 @@ footer > div p {padding: 3px;}
 /*Mapa*/
 .mapa-texto-interno {
   font-size: 48px;
-  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
   fill: #FFF;
 }
 

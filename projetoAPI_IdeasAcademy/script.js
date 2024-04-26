@@ -63,6 +63,17 @@ document.addEventListener('keypress', (event) => {
     }
 })
 
+/*-----Estados------*/
+let estados = document.querySelectorAll('.estado')
+
+estados.forEach(ev => {
+    ev.addEventListener('click', () => {
+        search.value = ev.dataset.value
+        btnSearch.click()
+    })
+})
+
+
 //footer
 const timeApplication = document.querySelector('.time')
 const dateApplication = document.querySelector('.date')
@@ -77,10 +88,3 @@ function date() {
 
 timeApplication.innerText = time()
 dateApplication.innerText = date()
-
-/*----------------------------------------------------------*/
-const rioDeJaneiro = document.querySelector('.rioDeJaneiro')
-
-rioDeJaneiro.addEventListener('click', () => {
-    console.log('Olá, mundo!')
-})
