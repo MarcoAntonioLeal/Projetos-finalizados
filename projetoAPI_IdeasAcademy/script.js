@@ -11,7 +11,6 @@ const thermal = document.querySelector('#thermal')
 const rain = document.querySelector('#rain')
 const humidity = document.querySelector('#humidity')
 const pressure = document.querySelector('#pressure')
-const cloudiness = document.querySelector('#cloudiness')
 const visibility = document.querySelector('#visibility')
 const wind = document.querySelector('#wind')
 const direcWind = document.querySelector('#direcWind')
@@ -39,7 +38,6 @@ function resultForecast(dados) {
     tempMax.innerText = Number(dados.main.temp_max).toFixed(0) + '°C'
     tempMin.innerText = Number(dados.main.temp_min).toFixed(0) + '°C'
     thermal.innerText = Number(dados.main.feels_like).toFixed(0) + '°C'
-    cloudiness.innerText = dados.clouds.all + '%'
     rain.innerText = dados.clouds.all + '%'
     humidity.innerText = dados.main.humidity + '%'
     pressure.innerText = dados.main.pressure + 'hPa'
