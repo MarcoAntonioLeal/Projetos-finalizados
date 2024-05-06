@@ -21,10 +21,9 @@ function imageForecast(icon) {
     return `img/iconPrevisaoTempo/campoPrevisao/${icon}.png`
 }
 
-function backGround() {
+function backGround(icon) {
     const background = document.body
-    return background.style.backgroundImage = 'url(img/iconPrevisaoTempo/campoPrevisao/01d.png)'
-    //return `img/iconPrevisaoTempo/campoPrevisao/${icon}.png`
+    return background.style.backgroundImage = `url(img/iconPrevisaoTempo/campoPrevisao/${icon}.png)`
 }
 
 async function weatherForecast(city) {
@@ -38,6 +37,7 @@ function resultForecast(dados) {
         alert('Essa cidade não existe')
         location.reload()
     }
+    backGround(dados.weather[0].icon)
     city.innerText = dados.name
     forecastImg.src = imageForecast(dados.weather[0].icon) 
     tempMax.innerText = Number(dados.main.temp_max).toFixed(0) + '°C'
@@ -55,7 +55,6 @@ function resultForecast(dados) {
 }
 
 btnSearch.addEventListener('click', () => {
-    backGround()
     weatherForecast(search.value)
     search.value = ''
     search.focus()
