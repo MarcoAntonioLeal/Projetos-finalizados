@@ -211,3 +211,8 @@ footer > div p {padding: 3px;}
 .centro-oeste:hover {fill: #853c00;}
 .nordeste:hover {fill: #5d0081;}
 .norte:hover {fill: #004606;}
+
+
+body {
+  background-repeat: no-repeat;
+}
