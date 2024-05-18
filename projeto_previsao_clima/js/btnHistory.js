@@ -20,7 +20,7 @@ class climateHistory {
 }
 const arrayHistory = []
 
-function resultForecast(dados) {
+function resultForecastHistory(dados) {
     const historyClimate = new climateHistory(
         dados.name, 
         dados.weather[0].icon, 
