@@ -16,31 +16,6 @@ divMenu.addEventListener('mouseleave', () => {
     menuBtnScreenSmall()
 })
 
-//btn Pesquisa automática
-const btnSearchAutomatic = document.querySelector('#automatic')
-
-const divMap = document.querySelector('.map')
-const divStates = document.querySelector('.states')
-const divSearchAutomatic = document.querySelector('.searchAutomatic')
-const inputSearch = document.querySelector('.inputSearch')
-
-
-btnSearchAutomatic.addEventListener('click', () => {
-    divMap.classList.toggle('mapReduce')
-    divStates.classList.toggle('divReduce')
-    divSearchAutomatic.classList.toggle('show')
-    inputSearch.classList.toggle('hidden')
-})
-
-const cityAuto = document.querySelector('#cityAuto')
-const btnAuto = document.querySelector('#btnAuto')
-
-btnAuto.addEventListener('click', () => {
-    search.value = cityAuto.value
-    btnSearch.click()
-})
-
-
 //Main
 const iframeMaps = document.getElementsByTagName('iframe')[0]  
 

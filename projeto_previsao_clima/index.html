@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/btnSearchAutomatic.css">
     <script src="js/index.js" defer></script>
     <script src="js/btnHistory.js" defer></script>
+    <script src="js/btnAutomatic.js" defer></script>
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
     <title>Ideas Weather</title>
 </head>
@@ -37,38 +38,55 @@
         </div>
 
         <div class="searchAutomatic">
-            <p>
+            <div>
                 <label for="">Escolha a cidade para pesquisa automática</label>
                 <br>
                 <input type="search" name="cityAuto" id="cityAuto" autofocus autocomplete="off" placeholder="Cidades do Brasil...">
-            </p>
-            <p>
+                <br>
+                <span id="spanCity" class="span"></span>
+            </div>
+            <div>
                 <label for="">Repetir quantas vezes</label>
                 <br>
-                <select name="" id="">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
+                <select name="quantityRepeat" id="quantityRepeat">
+                    <option value="">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
-            </p>
+                <br>
+                <span id="spanRepeat" class="span"></span>
+            </div>
             
-            <p>        
+            <div>        
                 <label for="">Repetir em intervalos de:</label>
                 <br>
-                <select name="" id="">
-                    <option value="">10 segundos</option>
-                    <option value="">20 segundos</option>
-                    <option value="">30 segundos</option>
-                    <option value="">40 segundos</option>
-                    <option value="">50 segundos</option>
-                    <option value="">1 minuto</option>
+                <select name="intervalRepeat" id="intervalRepeat">
+                    <option value="">-</option>
+                    <option value="2">02 segundos</option>
+                    <option value="4">04 segundos</option>
+                    <option value="8">08 segundos</option>
+                    <option value="10">10 segundos</option>
+                    <option value="12">12 segundos</option>
                 </select>
-            </p>
-            <p>
-                <input type="button" value="Iniciar" id="btnAuto">
-            </p>
+                <br>
+                <span id="spanInterval" class="span"></span>
+            </div>
+            <div>
+                <input type="button" value="Confirmar" id="btnConfirm">
+            </div>
+    
+            <div>
+                <ul id="ulAuto"></ul>
+            </div>
+    
+            <div>
+                <input type="button" value="Iniciar busca" id="startSearch" disabled>
+                
+                <input type="button" value="Apagar" id="clearList" disabled>
+            </div>
         </div>
 
         <div class="states">
