@@ -43,5 +43,6 @@ function resultForecastHistory(dados) {
 const btnHistory = document.querySelector('#history')
     
 btnHistory.addEventListener('click', () => {
+    alert('Histórico de pesquisa enviado, para visualizá-lo acesse o console')
     console.log(arrayHistory)
 })

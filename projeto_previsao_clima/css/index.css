@@ -82,7 +82,7 @@ main {
 }
 
 .mapReduce {
-    width: 50%;
+    width: 0%;
     transition: width 2s ease;
 }
 
@@ -102,8 +102,6 @@ iframe {
     border-left: 1px solid;
     border-bottom: 1px solid;
 }
-
-.statesReduce {width: 30%;}
 
 /*Main states input-------------------------------------*/
 .inputSearch {
@@ -201,7 +199,7 @@ footer > div p {padding: 3px;}
         min-width: 350px;
     }
 
-    input#automatic, .searchAutomatic {display: none;}
+    input#automatic, div.searchAutomatic {display: none;}
 }
 
 @media screen and (max-width: 600px) {

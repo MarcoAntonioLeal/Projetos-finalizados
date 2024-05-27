@@ -1,13 +1,11 @@
 const btnSearchAutomatic = document.querySelector('#automatic')
 
 const divMap = document.querySelector('.map')
-const divStates = document.querySelector('.states')
 const divSearchAutomatic = document.querySelector('.searchAutomatic')
 const inputSearch = document.querySelector('.inputSearch')
 
 btnSearchAutomatic.addEventListener('click', () => {
     divMap.classList.toggle('mapReduce')
-    divStates.classList.toggle('divReduce')
     divSearchAutomatic.classList.toggle('show')
     inputSearch.classList.toggle('hidden')
 })
@@ -37,9 +35,7 @@ class auto {
         listAuto.appendChild(newLi)
               
         newLi.innerText = 
-        `Cidade: ${cityAuto.value}
-        Repetir: ${quantityRepeat}
-        Intervalo de ${intervalRepeat}s`
+        `Cidade: ${cityAuto.value} | Repetir: ${quantityRepeat} | Intervalo de ${intervalRepeat}s`
     }
 }
 let arrayAuto = []
@@ -87,9 +83,8 @@ btnConfirm.addEventListener('click', () => {
         
     } else {
         arrayAuto.push(new auto())
-        console.log(arrayAuto) //Retirar
 
-        if(arrayAuto.length == 3) {
+        if(arrayAuto.length == 6) {
             document.querySelector('#btnConfirm').setAttribute('disabled', 'true')
         }
 
@@ -108,4 +103,24 @@ btnClearList.addEventListener('click', () => {
 
     clearFields()
     arrayAuto = []
+})
+
+//automação da busca
+function actionSearch(valueSearch) {
+    let quantity = 0
+    const intervalId = setInterval(() => {
+        weatherForecast(arrayAuto[valueSearch].city)
+        quantity += 1
+
+        if(quantity == arrayAuto[valueSearch].quantity) {
+            clearInterval(intervalId)
+            quantity = 0
+        }
+    }, 1000 * arrayAuto[valueSearch].interval)
+}
+
+btnStart.addEventListener('click', () => {
+    for(let c = 0; c < arrayAuto.length; c++) {
+        actionSearch(c)
+    }
 })
