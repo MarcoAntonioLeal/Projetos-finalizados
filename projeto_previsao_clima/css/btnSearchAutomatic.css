@@ -2,7 +2,6 @@
 
 .searchAutomatic {
     display: none;
-    /*display: flex;*/
     flex-direction: column;
     row-gap: 10px;
     
@@ -58,3 +57,13 @@ li {
     padding: 5px;
     margin-bottom: 10px;
 }
+
+progress {
+    width: 350px;
+    height: 15px;
+    border: 1px solid;
+}
+
+::-webkit-progress-value {
+    background: -webkit-linear-gradient(left, #c0cad6 0%, #1c274c 100%);
+    }

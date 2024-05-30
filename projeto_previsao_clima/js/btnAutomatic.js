@@ -8,6 +8,9 @@ btnSearchAutomatic.addEventListener('click', () => {
     divMap.classList.toggle('mapReduce')
     divSearchAutomatic.classList.toggle('show')
     inputSearch.classList.toggle('hidden')
+
+    cityAuto.focus()
+    search.focus()
 })
 
 const cityAuto = document.querySelector('#cityAuto')
@@ -38,7 +41,6 @@ class auto {
         `Cidade: ${cityAuto.value} | Repetir: ${quantityRepeat} | Intervalo de ${intervalRepeat}s`
     }
 }
-let arrayAuto = []
 
 function timeout() {
     return setTimeout(() => {
@@ -59,6 +61,14 @@ function clearFields() {
 
     cityAuto.focus()
 }
+
+function disabledFields(elem) {
+    elem.setAttribute('disabled', 'true')
+}
+
+function removeDisabled(elem) {
+    elem.removeAttribute('disabled')
+}
     
 const spanCity = document.querySelector('#spanCity')
 const spanRepeat = document.querySelector('#spanRepeat')
@@ -68,6 +78,11 @@ const btnConfirm = document.querySelector('#btnConfirm')
 const btnStart = document.querySelector('#startSearch')
 const btnClearList = document.querySelector('#clearList')
     
+const progress = document.querySelector('#prog')
+
+let arrayAuto = []
+let arrayTagProgress = []
+
 btnConfirm.addEventListener('click', () => {
     if(cityAuto.value == '') {
         spanCity.innerText = '*Você não escolheu nenhuma cidade*'
@@ -85,12 +100,15 @@ btnConfirm.addEventListener('click', () => {
         arrayAuto.push(new auto())
 
         if(arrayAuto.length == 6) {
-            document.querySelector('#btnConfirm').setAttribute('disabled', 'true')
+            disabledFields(btnConfirm)
+            disabledFields(cityAuto)
+            document.querySelectorAll('select').forEach(elem => {
+                elem.setAttribute('disabled', 'true')
+            })
         }
 
-        btnStart.removeAttribute('disabled')
-        btnClearList.removeAttribute('disabled')
-
+        removeDisabled(btnStart)
+        removeDisabled(btnClearList)
         clearFields()
     }
 })
@@ -98,11 +116,20 @@ btnConfirm.addEventListener('click', () => {
 btnClearList.addEventListener('click', () => {
     document.querySelector('#ulAuto').innerText = ''
 
-    btnStart.setAttribute('disabled', 'true')
-    btnClearList.setAttribute('disabled', 'true')
+    removeDisabled(btnConfirm)
+    removeDisabled(cityAuto)
+    document.querySelectorAll('select').forEach(elem => {
+        elem.removeAttribute('disabled')
+    })
+
+    disabledFields(btnStart)
+    disabledFields(btnClearList)
+
+    progress.value = '0'
 
     clearFields()
     arrayAuto = []
+    arrayTagProgress = []
 })
 
 //automação da busca
@@ -119,7 +146,37 @@ function actionSearch(valueSearch) {
     }, 1000 * arrayAuto[valueSearch].interval)
 }
 
+//automação da barra de progresso
+function actionProgressBar() {
+    arrayAuto.forEach(elem => {
+        arrayTagProgress.push((elem.quantity * elem.interval))
+    })
+    let arrayProgress = arrayTagProgress.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+    progress.setAttribute('value', '0')
+    progress.setAttribute('max', arrayProgress)
+
+    let contador = 0
+    const intervalId = setInterval(() => {
+        progress.value += 1
+        contador += 1
+        
+        if(contador == arrayProgress) {
+            clearInterval(intervalId)
+            contador = 0
+
+            btnHistory.click()
+            btnClearList.click()
+        }
+    }, 1000)
+}
+
 btnStart.addEventListener('click', () => {
+    disabledFields(btnStart)
+    disabledFields(btnConfirm)
+    
+    actionProgressBar()
+
     for(let c = 0; c < arrayAuto.length; c++) {
         actionSearch(c)
     }
