@@ -184,6 +184,7 @@ footer > div p {padding: 3px;}
 
 @media screen and (max-width: 768px) {
     main {
+        min-height: 100vh;
         overflow: scroll;
         flex-wrap: wrap-reverse;
     }
@@ -201,7 +202,7 @@ footer > div p {padding: 3px;}
 
     #table{height: auto;}
 
-    input#automatic, div.searchAutomatic, {display: none;}
+    input#automatic, div.searchAutomatic {display: none;}
 }
 
 @media screen and (max-width: 600px) {
