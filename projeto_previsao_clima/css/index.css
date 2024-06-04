@@ -186,7 +186,7 @@ footer > div p {padding: 3px;}
     main {
         min-height: 100vh;
         overflow: scroll;
-        flex-wrap: wrap-reverse;
+        /*flex-wrap: wrap-reverse;*/
     }
 
     .map {
