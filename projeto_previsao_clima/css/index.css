@@ -199,7 +199,9 @@ footer > div p {padding: 3px;}
         min-width: 350px;
     }
 
-    input#automatic, div.searchAutomatic {display: none;}
+    #table{height: auto;}
+
+    input#automatic, div.searchAutomatic, {display: none;}
 }
 
 @media screen and (max-width: 600px) {
