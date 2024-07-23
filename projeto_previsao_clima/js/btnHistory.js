@@ -1,3 +1,6 @@
+import {date} from "./index.js"
+import {time} from "./index.js"
+
 class climateHistory {
     constructor(city, forecastImg, tempMax, tempMin, thermal, rain, humidity, pressure, visibility, forecast, wind, direcWind, latitude, longitude) {
         this.date = date()
@@ -20,7 +23,7 @@ class climateHistory {
 }
 const arrayHistory = []
 
-function resultForecastHistory(dados) {
+export function resultForecastHistory(dados) {
     const historyClimate = new climateHistory(
         dados.name, 
         dados.weather[0].icon, 

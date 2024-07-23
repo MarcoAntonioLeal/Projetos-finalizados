@@ -1,3 +1,5 @@
+import {resultForecastHistory} from "./btnHistory.js"
+
 //header
 const btnMenu = document.querySelector('#menu')
 const divMenu = document.querySelector('.menu')
@@ -91,11 +93,11 @@ document.addEventListener('keypress', (event) => {
 const timeApplication = document.querySelector('.time')
 const dateApplication = document.querySelector('.date')
 
-function time() {
+export function time() {
     return new Date().toLocaleTimeString().slice(0, 5)
 }
 
-function date() {
+export function date() {
     return new Date().toLocaleDateString()
 }
 
