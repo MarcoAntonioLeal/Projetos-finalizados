@@ -43,8 +43,8 @@ export function resultForecastHistory(dados) {
         arrayHistory.push(historyClimate)
     }
 
-const btnHistory = document.querySelector('#history')
-    
+ export const btnHistory = document.querySelector('#history')
+
 btnHistory.addEventListener('click', () => {
     alert('Histórico de pesquisa enviado, para visualizá-lo acesse o console')
     console.log(arrayHistory)

@@ -1,3 +1,6 @@
+import {btnHistory} from "./btnHistory.js"
+import {weatherForecast} from "./index.js"
+
 const btnSearchAutomatic = document.querySelector('#automatic')
 
 const divMap = document.querySelector('.map')

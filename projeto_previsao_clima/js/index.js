@@ -48,7 +48,7 @@ function locationCity(cityLocation) {
     return `https://www.google.com/maps?q=${cityLocation},%20Brasil&output=embed`
 }
 
-async function weatherForecast(city) {
+ export async function weatherForecast(city) {
     const dados = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${'ba438284fa602652dd54444ff2b38918'}&lang=pt_br&units=metric`).then(result => result.json())
     
     resultForecast(dados)
