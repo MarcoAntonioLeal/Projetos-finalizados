@@ -105,6 +105,7 @@ iframe {
 
 /*Main states input-------------------------------------*/
 .inputSearch {
+    display: flex;
     border: 1px solid;
     margin-bottom: 40px;
     box-shadow: 1px 1px 1px #00000080;
