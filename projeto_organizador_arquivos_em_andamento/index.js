@@ -1,11 +1,16 @@
 const fs = require('node:fs')
 const path = require('node:path')
 
+const dirOrganizador = fs.readdirSync('C:/Users/marc-/OneDrive/Desktop/Sayo', 'utf-8')
 
-fs.watch('C:/Users/marc-/OneDrive/Desktop/Sayo', {persistent: true} ,(a, b) => {
-    console.log(a, b)
+dirOrganizador.forEach(nomeArquivo => {
+    if (path.extname(nomeArquivo) !== '.ini') {
+        console.log(path.extname(nomeArquivo))
+    }
 })
 
-console.log(2+3)
-console.log('olá mundo')
 
+
+/*fs.watch('C:/Users/marc-/OneDrive/Desktop/Sayo', {persistent: true} ,(a, b) => {
+    console.log(a, b)
+})*/
