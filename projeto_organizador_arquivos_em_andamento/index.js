@@ -6,7 +6,7 @@ const caminhoPastaFinal = 'C:/Users/marc-/OneDrive/Imagens/pasta_final'
 
 const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
 
-function moverArquivos() {
+function moverArquivos(arquivo) {
     return fs.copyFileSync(
             `${caminhoPastaOrganizadora}/${path.basename(arquivo)}`,
             `${caminhoPastaFinal}/${path.extname(arquivo)}/${path.basename(arquivo)}`)
@@ -20,18 +20,12 @@ arqPastaOrganizadora.forEach(arquivo => {
     if(!fs.existsSync(`${caminhoPastaFinal}/${path.extname(arquivo)}`)) {
         fs.mkdirSync(`${caminhoPastaFinal}/${path.extname(arquivo)}`)
 
-        /*fs.copyFileSync(
-            `${caminhoPastaOrganizadora}/${path.basename(arquivo)}`,
-            `${caminhoPastaFinal}/${path.extname(arquivo)}/${path.basename(arquivo)}`)*/
-    } else {
-        fs.copyFileSync(
-           /* `${caminhoPastaOrganizadora}/${path.basename(arquivo)}`,
-            `${caminhoPastaFinal}/${path.extname(arquivo)}/${path.basename(arquivo)}`)*/
-    }
-})
+        moverArquivos(arquivo)
 
-arqPastaOrganizadora.forEach(arquivo => {
-    console.log(path.basename(arquivo))
+    } else {
+        moverArquivos(arquivo)
+    }
+    fs.unlinkSync(`${caminhoPastaOrganizadora}/${path.basename(arquivo)}`)
 })
 
 
