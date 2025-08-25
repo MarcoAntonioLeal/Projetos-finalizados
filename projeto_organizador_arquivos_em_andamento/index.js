@@ -41,8 +41,15 @@ arqPastaOrganizadora.forEach(arquivo => {
     }
 })
 
- // envolve todo o código em um único bloco
- const Meunome = 'Marco Antonio'
-  const commented = "/*\n" + nome + "\n*/";
+// envolve todo o código em um único bloco
+const commented = "/*\n" + nome + "\n*/";
 
-console.log()
+const teste = fs.readFileSync('./LEIAME.txt', 'utf-8')
+const testes = teste.match(/1..../g)
+console.log(testes)
+
+if(testes == '1-(x)') {
+    console.log('Olá, Mundo!!!')
+} else {
+    console.log('Vamo que vamo!!!')
+}
