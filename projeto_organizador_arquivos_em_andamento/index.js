@@ -1,34 +1,34 @@
 const fs = require('node:fs')
 const path = require('node:path')
+const os = require('node:os')
+
+const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
+const caminhoPastaFinal = path.join(os.homedir(), 'Pictures', 'Say_Watcher')
 
 const nome = path.basename
 const extensao = path.extname
 
-const caminhoPastaOrganizadora = 'C:/Users/marc-/OneDrive/Desktop/Say_Watcher'
-const caminhoPastaFinal = 'C:/Users/marc-/OneDrive/Imagens/pasta_final'
-
-const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
-
-function mover_e_ValidarArquivos(arquivo) {
-    if(fs.existsSync(`${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)) {
-       return fs.renameSync(
-            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
-            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo).replace(extensao)}`) 
-    } else {
-        return fs.renameSync(
-            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
-            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)
-    }
-    
-    /*return fs.renameSync(
-            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
-            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)*/
-
+if(!fs.existsSync(caminhoPastaOrganizadora)) {
+    fs.mkdirSync(caminhoPastaOrganizadora)
 }
 
 if(!fs.existsSync(caminhoPastaFinal)) {
     fs.mkdirSync(caminhoPastaFinal)
 }
+
+function mover_e_ValidarArquivos(arquivo) {
+    if(fs.existsSync(`${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)) {
+       return fs.renameSync(
+            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
+            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo).replace(extensao(arquivo), ` - copia${extensao(arquivo)}`)}`) 
+    } else {
+        return fs.renameSync(
+            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
+            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)
+    }
+}
+
+const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
 
 arqPastaOrganizadora.forEach(arquivo => {
     if(!fs.existsSync(`${caminhoPastaFinal}/${extensao(arquivo)}`)) {
@@ -41,14 +41,8 @@ arqPastaOrganizadora.forEach(arquivo => {
     }
 })
 
+ // envolve todo o código em um único bloco
+ const Meunome = 'Marco Antonio'
+  const commented = "/*\n" + nome + "\n*/";
 
-
-
-/*if(!dirOrganizador.length == 0) {
-   
-} */
-
-
-/*fs.watch('C:/Users/marc-/OneDrive/Desktop/Sayo', {persistent: true} ,(a, b) => {
-    console.log(a, b)
-})*/
+console.log()
