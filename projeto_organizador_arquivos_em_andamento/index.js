@@ -3,7 +3,7 @@ const path = require('node:path')
 const os = require('node:os')
 
 const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
-const caminhoPastaFinal = path.join(os.homedir(), 'Pictures', 'Say_Watcher')
+const caminhoPastaFinal = path.join(os.homedir(), 'Pictures', 'Meus_arquivos')
 
 const nome = path.basename
 const extensao = path.extname

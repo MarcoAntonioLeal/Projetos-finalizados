@@ -1,16 +1,24 @@
-fffffffffffffffdsgsfdsdfbsfbsfbsfdbsdfbsfdbsdfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffffferyrtutyurtjk jvkjljajvaiejifajealdvndmvnalknvaknkanekjaenvalkejvakeklanvk
+========================================
+   📂 Aplicação de Organização de Documentos
+========================================
 
-ejaewvankevnakenvaknevlake,evnam,envmdnanekvnakefewkfjakewjfkawcmkawenvkaejvadvanerkvknaenvkal
-vnaevnakewnvkadvkjaeklfkfsdkjflskjfkdjfslfjskdjfslkdfjsldkjf
-skjdflksjeoiurwoieruweourwoieurwoieurwoieurowieurwoieurwoieurwiefjkzx,nv,xnv,nvdnvslkd
+Bem-vindo(a)!  
+Você acaba de adquirir uma ferramenta desenvolvida para facilitar 
+a organização automática de documentos no seu computador.
 
-fffffffffffffffdsgsfdsdfbsfbsfbsfdbsdfbsfdbsdfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffffferyrtutyurtjk jvkjljajvaiejifajealdvndmvnalknvaknkanekjaenvalkejvakeklanvk
+----------------------------------------
+🔧 Manual de procedimento:
+- Mova seus arquivos para sua pasta Say_Watcher em sua área de trabalho 
+- Atalho ????
+- Move seus documentos, para as suas respectivas pastas de acordo com sua extensão.
+- Permite personalização via arquivo de configuração (config.txt) que estará OCULTO.
 
-ejaewvankevnakenvaknevlake,evnam,envmdnanekvnakefewkfjakewjfkawcmkawenvkaejvadvanerkvknaenvkal
-vnaevnakewnvkadvkjaeklfkfsdkjflskjfkdjfslfjskdjfslkdfjsldkjf
-skjdflksjeoiurwoieruweourwoieurwoieurwoieurowieurwoieurwoieurwiefjkzx,nv,xnv,nvdnvslkd
-fffffffffffffffdsgsfdsdfbsfbsfbsfdbsdfbsfdbsdfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffffffferyrtutyurtjk jvkjljajvaiejifajealdvndmvnalknvaknkanekjaenvalkejvakeklanvk
+----------------------------------------
 
-ejaewvankevnakenvaknevlake,evnam,envmdnanekvnakefewkfjakewjfkawcmkawenvkaejvadvanerkvknaenvkal
-vnaevnakewnvkadvkjaeklfkfsdkjflskjfkdjfslfjskdjfslkdfjsldkjf
-skjdflksjeoiurwoieruweourwoieurwoieurwoieurowieurwoieurwoieurwiefjkzx,nv,xnv,nvdnvslkd 1-() 
+📌 Observações:
+- Os arquivos organizados ficam, por padrão, salvos na pasta "Meus_arquivos".
+- Não altere ou remova o arquivo "LEIAME.txt" e o "config.txt".
+
+----------------------------------------
+
+Obrigado por confiar em nossa ferramenta! 🚀
