@@ -1,15 +1,9 @@
 const fs = require('node:fs')
-const os = require('node:os')
 const path = require('node:path')
-
-const dirDocuments = 'Documents'
-const dirPictures = 'Pictures'
-const dirDownloads = 'Downloads'
-const dirMusic = 'Music'
-const dirVideos = 'Videos'
+const os = require('node:os')
 
 const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
-const caminhoPastaFinal = path.join(os.homedir(), dirPictures, 'Meus_arquivos')
+const caminhoPastaFinal = path.join(os.homedir(), 'Pictures', 'Meus_arquivos')
 
 const nome = path.basename
 const extensao = path.extname
@@ -23,14 +17,14 @@ if(!fs.existsSync(caminhoPastaFinal)) {
 }
 
 function mover_e_ValidarArquivos(arquivo) {
-    if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
+    if(fs.existsSync(`${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)) {
        return fs.renameSync(
-            path.join(caminhoPastaOrganizadora, nome(arquivo)),
-            path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo).replace(extensao(arquivo),  `- copia${extensao(arquivo)}`))) 
+            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
+            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo).replace(extensao(arquivo), ` - copia${extensao(arquivo)}`)}`) 
     } else {
         return fs.renameSync(
-            path.join(caminhoPastaOrganizadora, nome(arquivo)),
-            path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))
+            `${caminhoPastaOrganizadora}/${nome(arquivo)}`,
+            `${caminhoPastaFinal}/${extensao(arquivo)}/${nome(arquivo)}`)
     }
 }
 
