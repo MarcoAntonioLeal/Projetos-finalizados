@@ -1,24 +1,21 @@
 ========================================
-   📂 Aplicação de Organização de Documentos
+   📂 Aplicação de Organização para Arquivos
 ========================================
 
 Bem-vindo(a)!  
-Você acaba de adquirir uma ferramenta desenvolvida para facilitar 
-a organização automática de documentos no seu computador.
+Você acaba de adquirir, uma ferramenta desenvolvida para facilitar 
+a organização automática de seus arquivos em seu computador.
 
 ----------------------------------------
 🔧 Manual de procedimento:
-- Mova seus arquivos para sua pasta Say_Watcher em sua área de trabalho 
-- Atalho ????
-- Move seus documentos, para as suas respectivas pastas de acordo com sua extensão.
-- Permite personalização via arquivo de configuração (config.txt) que estará OCULTO.
+
+⭐ Atalho??
+⭐ .config
+
+- Sua pasta, onde os arquivos serão enviados para organização, se chama "Say_Watcher" e se encontra em sua área de trabalho.
+- Sua pasta, com os arquivos já organizados fica, por padrão, em seus documentos 
+- Mova seus arquivos para sua pasta Say_Watcher e aperte o atalho que você configurou
+- Dentro da pasta Say_Watcher, você encontrará um arquivo oculto chamado .config. Esse arquivo permite algumas mudanças no comportamento dessa aplicação. 
 
 ----------------------------------------
-
-📌 Observações:
-- Os arquivos organizados ficam, por padrão, salvos na pasta "Meus_arquivos".
-- Não altere ou remova o arquivo "LEIAME.txt" e o "config.txt".
-
-----------------------------------------
-
-Obrigado por confiar em nossa ferramenta! 🚀
+Obrigado por confiar em nossa aplicação! 🚀

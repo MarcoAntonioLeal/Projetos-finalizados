@@ -14,6 +14,41 @@ const caminhoPastaFinal = path.join(os.homedir(), dirPictures, 'Meus_arquivos')
 const nome = path.basename
 const extensao = path.extname
 
+function leiameTXT() {
+    fs.writeFileSync(
+        path.join(caminhoPastaOrganizadora, 'LEIAME.txt'),
+        `========================================
+   📂 Aplicação de Organização para Arquivos
+========================================
+
+ Bem-vindo(a)!  
+ Você acaba de adquirir, uma ferramenta desenvolvida para facilitar 
+ a organização automática de seus arquivos em seu computador.
+
+ ----------------------------------------
+ 🔧 Manual de procedimento:
+
+ ⭐ Atalho??
+ ⭐ .config
+
+ - Sua pasta, onde os arquivos serão enviados para organização, se chama "Say_Watcher" e se encontra em sua área de trabalho.
+
+ - Sua pasta, com os arquivos já organizados fica, por padrão, em seus documentos
+
+ - Mova seus arquivos para sua pasta Say_Watcher e aperte o atalho que você configurou
+ 
+ - Dentro da pasta Say_Watcher, você encontrará um arquivo oculto chamado .config. Esse arquivo permite algumas mudanças no comportamento dessa aplicação. 
+
+ ----------------------------------------
+ Obrigado por confiar em nossa aplicação! 🚀`,
+        'utf-8'
+    )
+}
+
+
+
+
+
 if(!fs.existsSync(caminhoPastaOrganizadora)) {
     fs.mkdirSync(caminhoPastaOrganizadora)
 }
@@ -24,11 +59,11 @@ if(!fs.existsSync(caminhoPastaFinal)) {
 
 function mover_e_ValidarArquivos(arquivo) {
     if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
-       return fs.renameSync(
+       return fs.copyFileSync(
             path.join(caminhoPastaOrganizadora, nome(arquivo)),
             path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo).replace(extensao(arquivo),  `- copia${extensao(arquivo)}`))) 
     } else {
-        return fs.renameSync(
+        return fs.copyFileSync(
             path.join(caminhoPastaOrganizadora, nome(arquivo)),
             path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))
     }
@@ -37,25 +72,15 @@ function mover_e_ValidarArquivos(arquivo) {
 const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
 
 arqPastaOrganizadora.forEach(arquivo => {
-    if(!fs.existsSync(`${caminhoPastaFinal}/${extensao(arquivo)}`)) {
-        fs.mkdirSync(`${caminhoPastaFinal}/${extensao(arquivo)}`)
+    if(!fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo)))) {
+        fs.mkdirSync(path.join(caminhoPastaFinal, extensao(arquivo)))
 
         mover_e_ValidarArquivos(arquivo)
 
     } else {
         mover_e_ValidarArquivos(arquivo)
     }
+    fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
 })
 
-// envolve todo o código em um único bloco
-const commented = "/*\n" + nome + "\n*/";
-
-const teste = fs.readFileSync('./LEIAME.txt', 'utf-8')
-const testes = teste.match(/1..../g)
-console.log(testes)
-
-if(testes == '1-(x)') {
-    console.log('Olá, Mundo!!!')
-} else {
-    console.log('Vamo que vamo!!!')
-}
+leiameTXT()
