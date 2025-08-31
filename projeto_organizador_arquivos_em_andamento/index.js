@@ -45,9 +45,9 @@ function leiameTXT() {
     )
 }
 
-
-
-
+if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.txt'))) {
+    leiameTXT()
+}
 
 if(!fs.existsSync(caminhoPastaOrganizadora)) {
     fs.mkdirSync(caminhoPastaOrganizadora)
@@ -82,5 +82,3 @@ arqPastaOrganizadora.forEach(arquivo => {
     }
     fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
 })
-
-leiameTXT()
