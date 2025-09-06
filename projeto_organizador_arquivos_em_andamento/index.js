@@ -14,17 +14,24 @@ const caminhoPastaFinal = path.join(os.homedir(), dirPictures, 'Meus_arquivos')
 const nome = path.basename
 const extensao = path.extname
 
-if(!fs.existsSync(caminhoPastaOrganizadora)) {
-    fs.mkdirSync(caminhoPastaOrganizadora)
+function criarPastas() { //verificará a existência das pastas
+    if(!fs.existsSync(caminhoPastaOrganizadora)) {
+        fs.mkdirSync(caminhoPastaOrganizadora)
+    }
+    
+    if(!fs.existsSync(caminhoPastaFinal)) {
+        fs.mkdirSync(caminhoPastaFinal)
+    }
+    
+    if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config'))) {
+        fs.mkdirSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config'))
+    }
 }
+criarPastas()
 
-if(!fs.existsSync(caminhoPastaFinal)) {
-    fs.mkdirSync(caminhoPastaFinal)
-}
-
-/*function leiameTXT() {
+function leiameTXT() {
 fs.writeFileSync(
-        path.join(caminhoPastaOrganizadora, 'LEIAME.txt'),
+        path.join(caminhoPastaOrganizadora, 'LEIAME.config', 'LEIAME.txt'),
         `========================================
    📂 Aplicação de Organização para Arquivos
 ========================================
@@ -51,11 +58,19 @@ fs.writeFileSync(
  Obrigado por confiar em nossa aplicação! 🚀`,
         'utf-8'
     )
-}*/
+}
 
-/*if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.txt'))) {
+function leiameTXT() {
+fs.writeFileSync(
+        path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'),
+        `========================================`,
+        'utf-8'
+    )
+}
+
+if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config','LEIAME.txt'))) {
     leiameTXT()
-}*/
+}
 
 function mover_e_ValidarArquivos(arquivo) {
     if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
@@ -79,8 +94,8 @@ arqPastaOrganizadora.forEach(arquivo => {
         
     }  
 })
-arrayArquivos.forEach(arquiv => {
-            console.log(arquiv)
+arrayArquivos.forEach(arquivo => {
+            console.log(arquivo)
         })
 console.log(arrayArquivos)
 
