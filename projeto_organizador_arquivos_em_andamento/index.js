@@ -14,8 +14,16 @@ const caminhoPastaFinal = path.join(os.homedir(), dirPictures, 'Meus_arquivos')
 const nome = path.basename
 const extensao = path.extname
 
-function leiameTXT() {
-    fs.writeFileSync(
+if(!fs.existsSync(caminhoPastaOrganizadora)) {
+    fs.mkdirSync(caminhoPastaOrganizadora)
+}
+
+if(!fs.existsSync(caminhoPastaFinal)) {
+    fs.mkdirSync(caminhoPastaFinal)
+}
+
+/*function leiameTXT() {
+fs.writeFileSync(
         path.join(caminhoPastaOrganizadora, 'LEIAME.txt'),
         `========================================
    📂 Aplicação de Organização para Arquivos
@@ -43,19 +51,11 @@ function leiameTXT() {
  Obrigado por confiar em nossa aplicação! 🚀`,
         'utf-8'
     )
-}
+}*/
 
-if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.txt'))) {
+/*if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.txt'))) {
     leiameTXT()
-}
-
-if(!fs.existsSync(caminhoPastaOrganizadora)) {
-    fs.mkdirSync(caminhoPastaOrganizadora)
-}
-
-if(!fs.existsSync(caminhoPastaFinal)) {
-    fs.mkdirSync(caminhoPastaFinal)
-}
+}*/
 
 function mover_e_ValidarArquivos(arquivo) {
     if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
@@ -70,8 +70,21 @@ function mover_e_ValidarArquivos(arquivo) {
 }
 
 const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
+const arrayArquivos = []
 
 arqPastaOrganizadora.forEach(arquivo => {
+    if(arquivo !== 'LEIAME.txt' && arquivo !== '.config.txt') {//para que o sistema não leia os arquivos de configuração e instrução
+        
+        arrayArquivos.push(arquivo)
+        
+    }  
+})
+arrayArquivos.forEach(arquiv => {
+            console.log(arquiv)
+        })
+console.log(arrayArquivos)
+
+/*arqPastaOrganizadora.forEach(arquivo => {
     if(!fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo)))) {
         fs.mkdirSync(path.join(caminhoPastaFinal, extensao(arquivo)))
 
@@ -81,7 +94,9 @@ arqPastaOrganizadora.forEach(arquivo => {
         mover_e_ValidarArquivos(arquivo)
     }
     fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
-})
+})*/
+
+
 
 /*
 const fs = require('node:fs')
