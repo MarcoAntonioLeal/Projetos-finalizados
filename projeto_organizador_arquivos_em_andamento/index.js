@@ -82,3 +82,16 @@ arqPastaOrganizadora.forEach(arquivo => {
     }
     fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
 })
+
+/*
+const fs = require('node:fs')
+
+const arquivoDeConfiguracao = fs.readFileSync('./meu_arquivo.txt', 'utf-8')
+const regex = /\{([^\}]+)\}/g
+const opcoesEmString = arquivoDeConfiguracao.matchAll(regex)
+
+const opcoesEmArray = [...opcoesEmString].map(valor => valor[1].replaceAll(' ', ''))
+
+
+console.log(opcoesEmArray)
+*/
