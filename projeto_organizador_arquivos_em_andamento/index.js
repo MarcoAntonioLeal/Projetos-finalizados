@@ -80,8 +80,20 @@ function criarArquivos() { //verificará a existência e criará os arquivos de 
 }
 criarArquivos()
 
+function config() {
+
+    const arquivoDeConfiguracao = fs.readFileSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'), 'utf-8')
+    const regex = /\{([^\}]+)\}/g
+    const opcoesEmString = arquivoDeConfiguracao.matchAll(regex)
+    const opcoesEmArray = [...opcoesEmString].map(valor => valor[1].toLocaleLowerCase().replaceAll(/n/g, ' '))//.replaceAll('ã', 'a'))
+
+    return opcoesEmArray
+}
+
+console.log(config())
 
 function mover_e_ValidarArquivos(arquivo) {
+
     if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
        return fs.copyFileSync(
             path.join(caminhoPastaOrganizadora, nome(arquivo)),
@@ -93,44 +105,24 @@ function mover_e_ValidarArquivos(arquivo) {
     }
 }
 
-const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')
-const arrayArquivos = []
+const arqPastaOrganizadora = fs.readdirSync(caminhoPastaOrganizadora, 'utf-8')//array inicial dos arquivos
+const arrayArquivos = [] //array final dos arquivos
 
 arqPastaOrganizadora.forEach(arquivo => {
-    if(arquivo !== 'LEIAME.txt' && arquivo !== '.config.txt') {//para que o sistema não leia os arquivos de configuração e instrução
-        
+    if(arquivo !== 'LEIAME.config') {//para que o sistema não leia a pasta de configuração
         arrayArquivos.push(arquivo)
-        
     }  
 })
+
 arrayArquivos.forEach(arquivo => {
-            console.log(arquivo)
-        })
-console.log(arrayArquivos)
 
-/*arqPastaOrganizadora.forEach(arquivo => {
-    if(!fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo)))) {
-        fs.mkdirSync(path.join(caminhoPastaFinal, extensao(arquivo)))
+        if (!fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo)))) {
+            fs.mkdirSync(path.join(caminhoPastaFinal, extensao(arquivo)))
 
-        mover_e_ValidarArquivos(arquivo)
+            mover_e_ValidarArquivos(arquivo)
 
-    } else {
-        mover_e_ValidarArquivos(arquivo)
-    }
-    fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
-})*/
-
-
-
-/*
-const fs = require('node:fs')
-
-const arquivoDeConfiguracao = fs.readFileSync('./meu_arquivo.txt', 'utf-8')
-const regex = /\{([^\}]+)\}/g
-const opcoesEmString = arquivoDeConfiguracao.matchAll(regex)
-
-const opcoesEmArray = [...opcoesEmString].map(valor => valor[1].replaceAll(' ', ''))
-
-
-console.log(opcoesEmArray)
-*/
+        } else {
+            mover_e_ValidarArquivos(arquivo)
+        }
+        fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
+    })
