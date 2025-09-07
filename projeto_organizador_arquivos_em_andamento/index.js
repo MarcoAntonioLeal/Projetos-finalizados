@@ -29,48 +29,57 @@ function criarPastas() { //verificará a existência das pastas
 }
 criarPastas()
 
-function leiameTXT() {
-fs.writeFileSync(
-        path.join(caminhoPastaOrganizadora, 'LEIAME.config', 'LEIAME.txt'),
-        `========================================
-   📂 Aplicação de Organização para Arquivos
-========================================
+function criarArquivos() { //verificará a existência e criará os arquivos de configuração
 
- Bem-vindo(a)!  
- Você acaba de adquirir, uma ferramenta desenvolvida para facilitar 
- a organização automática de seus arquivos em seu computador.
+    function leiameTXT() {
+    fs.writeFileSync(
+            path.join(caminhoPastaOrganizadora, 'LEIAME.config', 'LEIAME.txt'),
+            `========================================
+       📂 Aplicação de Organização para Arquivos
+    ========================================
+    
+     Bem-vindo(a)!  
+     Você acaba de adquirir, uma ferramenta desenvolvida para facilitar 
+     a organização automática de seus arquivos em seu computador.
+    
+     ----------------------------------------
+     🔧 Manual de procedimento:
+    
+     ⭐ Atalho??
+     ⭐ .config
+    
+     - Sua pasta, onde os arquivos serão enviados para organização, se chama "Say_Watcher" e se encontra em sua área de trabalho.
+    
+     - Sua pasta, com os arquivos já organizados fica, por padrão, em seus documentos
+    
+     - Mova seus arquivos para sua pasta Say_Watcher e aperte o atalho que você configurou
+     
+     - Dentro da pasta Say_Watcher, você encontrará um arquivo oculto chamado .config. Esse arquivo permite algumas mudanças no comportamento dessa aplicação. 
+    
+     ----------------------------------------
+     Obrigado por confiar em nossa aplicação! 🚀`,
+            'utf-8'
+        )
+    }
+    
+    function configTXT() {
+    fs.writeFileSync(
+            path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'),
+            `========================================`,
+            'utf-8'
+        )
+    }
+    
+    if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config','LEIAME.txt'))) {
+        leiameTXT()
+    }
 
- ----------------------------------------
- 🔧 Manual de procedimento:
-
- ⭐ Atalho??
- ⭐ .config
-
- - Sua pasta, onde os arquivos serão enviados para organização, se chama "Say_Watcher" e se encontra em sua área de trabalho.
-
- - Sua pasta, com os arquivos já organizados fica, por padrão, em seus documentos
-
- - Mova seus arquivos para sua pasta Say_Watcher e aperte o atalho que você configurou
- 
- - Dentro da pasta Say_Watcher, você encontrará um arquivo oculto chamado .config. Esse arquivo permite algumas mudanças no comportamento dessa aplicação. 
-
- ----------------------------------------
- Obrigado por confiar em nossa aplicação! 🚀`,
-        'utf-8'
-    )
+    if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config','.config.txt'))) {
+        configTXT()
+    }    
 }
+criarArquivos()
 
-function leiameTXT() {
-fs.writeFileSync(
-        path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'),
-        `========================================`,
-        'utf-8'
-    )
-}
-
-if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config','LEIAME.txt'))) {
-    leiameTXT()
-}
 
 function mover_e_ValidarArquivos(arquivo) {
     if(fs.existsSync(path.join(caminhoPastaFinal, extensao(arquivo), nome(arquivo)))) {
