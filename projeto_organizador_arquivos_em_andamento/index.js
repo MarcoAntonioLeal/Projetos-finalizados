@@ -125,7 +125,15 @@ arrayArquivos.forEach(arquivo => {
         mover_e_ValidarArquivos(arquivo)
     }
 
-    if(config()[0] == 'nao' || config()[0] == '') { //opção (copiar ou mover)
+    if(config()[0] == 'nao' || config()[0] == '') { //opção (copiar ou mover) por padrão copiar
         fs.unlinkSync(path.join(caminhoPastaOrganizadora, nome(arquivo)))
     }
 })
+
+console.log(config())
+
+/*
+- Caso o arquivo .confg esteja vazio escrevê-lo novamente dentro da função criarArquivos()
+- Nenhuma das opções pode ser vazia, se não criar como default (não, document, não)
+- colocar duas opções a primeira de copiar e mover e a segunda opção de diretórios  
+*/
