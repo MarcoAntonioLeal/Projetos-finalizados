@@ -2,6 +2,8 @@ const fs = require('node:fs')
 const os = require('node:os')
 const path = require('node:path')
 
+
+
 const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
 const caminhoPastaFinal = path.join(os.homedir(), config()[1], 'Meus_arquivos')
 
