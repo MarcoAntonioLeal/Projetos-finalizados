@@ -1,4 +1,3 @@
-const { match } = require('node:assert')
 const fs = require('node:fs')
 const os = require('node:os')
 const path = require('node:path')
@@ -91,7 +90,7 @@ function criarArquivos() { //verificará a existência e criará os arquivos TXT
         
     } else if (config()[0] != config()[0].match(/sim|nao/)) {
         configTXT()
-        
+
     } else if (config()[0] != config()[0].match(/sim|nao/)) {//ajustar
 
     }
