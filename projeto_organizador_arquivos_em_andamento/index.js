@@ -3,7 +3,7 @@ const os = require('node:os')
 const path = require('node:path')
 
 const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
-const caminhoPastaFinal = path.join(os.homedir(), /*config()[1]*/'Pictures', 'Meus_arquivos')
+const caminhoPastaFinal = path.join(os.homedir(), config()[1], 'Meus_arquivos')
 
 const nome = path.basename
 const extensao = path.extname
@@ -61,18 +61,18 @@ function criarArquivos() { //verificará a existência e criará os arquivos TXT
     }
     
     function configTXT() {
-    fs.writeFileSync(
+        fs.writeFileSync(
             path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'),
             `========================================
     const dirDocuments = 'Documents'
     const dirPictures = 'Pictures'
     const dirMusic = 'Music'
     const dirVideos = 'Videos'
-    {nao} {Pictures} `,
+    {nao} {pictures} `,
             'utf-8'
         )
     }
-    
+
     if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config', 'LEIAME.txt'))) {
         leiameTXT()
     }
@@ -84,18 +84,16 @@ function criarArquivos() { //verificará a existência e criará os arquivos TXT
     if(!fs.existsSync(path.join(caminhoPastaOrganizadora, 'LEIAME.config', '.config.txt'))) {
         configTXT()
     }
-    
+
     if(config()[1] == undefined) {
         configTXT()
-        
+
     } else if (config()[0] != config()[0].match(/sim|nao/)) {
         configTXT()
 
-    } else if (config()[0] != config()[0].match(/sim|nao/)) {//ajustar
-
+    } else if (config()[1] != config()[1].match(/videos|music|pictures|documents/)) {
+        configTXT()
     }
-
-    
 }
 criarArquivos()
 
