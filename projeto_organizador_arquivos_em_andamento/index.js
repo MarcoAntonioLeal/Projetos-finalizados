@@ -93,7 +93,7 @@ function criarArquivos() { //verificará a existência e criará os arquivos TXT
     } else if (config()[0] != config()[0].match(/sim|nao/)) {
         configTXT()
 
-    } else if (config()[1] != config()[1].match(/videos|music|pictures|documents/)) {
+    } else if (config()[1] != config()[1].match(/videos|music|pictures|documents|todos/)) {
         configTXT()
     }
 }
@@ -153,4 +153,29 @@ console.log(config())
 - Caso o arquivo .confg esteja vazio escrevê-lo novamente dentro da função criarArquivos()
 - Nenhuma das opções pode ser vazia, se não criar como default (não, document, não)
 - colocar duas opções a primeira de copiar e mover e a segunda opção de diretórios  
+*/
+
+/*
+const categories = {
+  image: [
+    "jpg", "jpeg", "png", "gif", "bmp", "tiff", "svg", "webp", "ico", "heic"
+  ],
+  video: [
+    "mp4", "avi", "mkv", "mov", "wmv", "flv", "webm", "mpeg", "mpg", "3gp"
+  ],
+  audio: [
+    "mp3", "wav", "ogg", "flac", "aac", "wma", "m4a", "opus", "mid", "amr"
+  ],
+  document: [
+    "pdf", "doc", "docx", "odt", "xls", "xlsx", "ods",
+    "ppt", "pptx", "txt", "rtf", "csv", "md", "json", "xml", "html", "htm"
+  ],
+  compressed: [
+    "zip", "rar", "7z", "tar", "gz", "bz2", "xz", "iso"
+  ],
+  code: [
+    "js", "ts", "java", "c", "cpp", "cs", "py", "php",
+    "rb", "go", "rs", "swift", "kt", "html", "css", "scss", "sql"
+  ],
+};
 */
