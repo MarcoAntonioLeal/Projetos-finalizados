@@ -5,7 +5,7 @@ const path = require('node:path')
 
 
 const caminhoPastaOrganizadora = path.join(os.homedir(), 'desktop', 'Say_Watcher')
-const caminhoPastaFinal = path.join(os.homedir(), config()[1], 'Meus_arquivos')
+const caminhoPastaFinal = path.join(os.homedir(), /*config()[1]*/'pictures', 'Meus_arquivos')
 
 const nome = path.basename
 const extensao = path.extname
